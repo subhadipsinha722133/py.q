@@ -1,0 +1,17 @@
+# 	Wap to find the value of the series:1+(x/1!)+(x^2/2!)+…+(x^n/n!)
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+def series_value(x, n):
+    total = 0
+    for i in range(n + 1):
+        total += (x ** i) / factorial(i)
+    return total
+# Example usage:
+x = float(input("Enter the value of x: "))
+n = int(input("Enter the value of n: "))
+
+result = series_value(x, n)
+print("Value of the series:", result)
